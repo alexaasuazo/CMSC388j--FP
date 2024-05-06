@@ -1,0 +1,17 @@
+{% extends "header.html" %} {% block content %}
+<div class="review">
+
+    <h3>Replies:</h3>
+    {% if replies %}
+        <ul>
+            {% for reply in replies %}
+            <li>
+                <strong>{{ reply.commenter.username }}:</strong> {{ reply.content }}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No replies yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
